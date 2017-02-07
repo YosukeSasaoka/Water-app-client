@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#map_canvas {
+	width: 100vw;
+	height: 85vh;
+}
+footer nav a#map{
+	background-color: #006b48;
+}
+
+footer nav a#timer{
+	background-color: #00be9f;
+}
+
+.infowin iframe {
+	display:block;
+	margin:0 auto; padding:0;
+	box-sizing:border-box;
+}
+.infowin p {
+	margin:5px; padding:0;
+}
