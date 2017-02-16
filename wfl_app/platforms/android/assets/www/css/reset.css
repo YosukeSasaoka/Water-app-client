@@ -1,0 +1,96 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+    line-height:1;
+    margin:0;
+}
+
+html{
+	width: 100%;
+}
+ 
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+ 
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+ 
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+ 
+ul {
+    list-style:none;
+    padding:0;
+}
+li {
+    padding:0;
+}
+ 
+input, select {
+    vertical-align:middle;
+}
+ 
+a {
+    display: block;
+}
+ 
+a {
+    -webkit-tap-highlight-color:transparent;
+}
+
+header{
+	width: 100vw;
+	height: 5vh;
+	background: #1e5799; /* Old browsers */
+	background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 52%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 52%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 52%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#2989d8',GradientType=0 ); /* IE6-9 */
+	position: relative;
+}
+
+header #title{
+	color: #FFFFFF;
+	font-size: 12px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	 -webkit-transform: translate(-50%, -50%); /* Safari用 */	
+}
+
+header a svg{
+	height: 25px;
+	float: left;
+	margin: 5px 0 6px 10px;
+}
+
+footer{
+	position: fixed;
+	bottom: 0;
+	width: 100vw;
+	height: 10vh;
+}
+
+footer nav a{
+	width: 50vw;
+	height: 100vh;
+	float: left;
+	text-align: center;
+}
+
+footer nav a svg {
+    height: 7%;
+    margin: 15px auto 0;
+    text-align: center;
+}
