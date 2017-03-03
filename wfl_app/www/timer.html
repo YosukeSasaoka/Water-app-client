@@ -12,6 +12,7 @@
 	tim = 0;
 
 	function start(){
+	recognizeSpeech();
 	cnt = 60
 	tim = setInterval ( "myTimer()", 1000 );
 	}
@@ -33,11 +34,16 @@
             }
 
             function recognizeSpeech() {
+								var result;
                 var maxMatches = 1;
                 var promptString = "開いています"; // optional
                 var language = "ja-JP";                     // optional
                 window.plugins.speechrecognizer.startRecognize(function(result){
-                    alert(result);
+										console.log(result);
+										if(result[0].match(/好き/i)) {
+											alert("success");
+											clearInterval(tim);
+									}
                 }, function(errorMessage){
                     console.log("Error message: " + errorMessage);
                 }, maxMatches, promptString, language);
@@ -70,15 +76,12 @@
 
 <body>
 	<header>
-	<a href="./"><svg id="レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.3 40.9"><defs><style>.cls-1{fill:#fff;}</style></defs><path class="cls-1" d="M.6 18.5v.5H.2v1a1.3 1.3 0 0 0 0 .3 1.3 1.3 0 0 0 0 .2 2.1 2.1 0 0 0-.2.5v1.1l.2.2v.2l.2.2h.1l17.4 17.2a3.6 3.6 0 1 0 5.1-5.1L12.3 24.1h33.4a3.6 3.6 0 0 0 3.6-3.6 3.6 3.6 0 0 0-3.6-3.6H12.3L23 6.2a3.6 3.6 0 1 0-5.1-5.1L1 17.9l-.2.2z" id="New_Symbol_175" data-name="New Symbol 175"/></svg></a>
+		<a href="#" onclick="javascript:window.history.back(-1);return false;"><svg id="レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.3 40.9"><defs><style>.cls-1{fill:#fff;}</style></defs><path class="cls-1" d="M.6 18.5v.5H.2v1a1.3 1.3 0 0 0 0 .3 1.3 1.3 0 0 0 0 .2 2.1 2.1 0 0 0-.2.5v1.1l.2.2v.2l.2.2h.1l17.4 17.2a3.6 3.6 0 1 0 5.1-5.1L12.3 24.1h33.4a3.6 3.6 0 0 0 3.6-3.6 3.6 3.6 0 0 0-3.6-3.6H12.3L23 6.2a3.6 3.6 0 1 0-5.1-5.1L1 17.9l-.2.2z" id="New_Symbol_175" data-name="New Symbol 175"/></svg></a>
 		<div id="title">Timer</div>
 </header>
 	<section id="timer">
 
 		<div id="countdown">60</div>
-		<button onclick="recognizeSpeech();">Start recognition</button>
-		        <button onclick="getSupportedLanguages();">Get Supported Languages</button>
-		        <button onclick="checkSpeechRecognition();">Check Speech Recognition</button>
 
 		<div id="button"><input type="button" value="START" onClick="start()"></div>
 		<p>詩が生れて、 山路を登りながら、智に働けば角が立つ。情に棹させば流される。住みにくさが高じると、安い所へ引き越したくなる。どこへ越しても住みにくいと悟った時、画が出来る。意地を通せば窮屈だ。

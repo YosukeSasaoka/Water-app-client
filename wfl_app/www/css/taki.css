@@ -18,8 +18,7 @@ h1{
 }
 
 #name{
-	width: 100vw;
-	margin: 20px 0 20px 15px;
+	padding: 20px 0 20px 15px;
 }
 
 #address{
@@ -72,4 +71,8 @@ li#car{
 
 li#pict{
 	background: url(../images/taki/pict.png) left top no-repeat;
+}
+
+section#taki{
+	padding: 1vh 1vw 15vh 1vw;
 }
