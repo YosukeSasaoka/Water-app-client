@@ -8,11 +8,13 @@
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="plugins/cordova-plugin-speechrecognizer/SpeechRecognizer.js"></script>
 
+<script language="JavaScript" type="text/javascript">
 <a onclick="Function Name();">
  var a = document.createElement( 'a' );
   a.addEventListener( 'click', function() { alert( 'start' ) }, false );
   a.addEventListener( 'click', function() { alert( 'Start recognition' ) }, false );
 </a>
+</script>
 
 <script language="JavaScript" type="text/javascript">
 	cnt = 0;
@@ -34,7 +36,10 @@
 </script>
 
 <script type="text/javascript">
-
+ function isLove(result){
+ 	if(result.match(/すき/i))
+ 		alert("すきを含んでいます。")
+ }
             function onDeviceReady(){
                 console.log("Device is ready");
             }
@@ -42,8 +47,10 @@
             function recognizeSpeech() {
                 var maxMatches = 1;
                 var promptString = "開いています"; // optional
-                var language = "ja-JP";                     // optional
+                var language = "ja-JP";
+                 // optional
                 window.plugins.speechrecognizer.startRecognize(function(result){
+                    isLove(result);
                     alert(result);
                 }, function(errorMessage){
                     console.log("Error message: " + errorMessage);
