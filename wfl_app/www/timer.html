@@ -12,9 +12,11 @@
 	tim = 0;
 
 	function start(){
-	recognizeSpeech();
-	cnt = 60
-	tim = setInterval ( "myTimer()", 1000 );
+		if(cnt == 0){
+			recognizeSpeech();
+			cnt = 60
+			tim = setInterval ( "myTimer()", 1000 );
+		}else{recognizeSpeech();}
 	}
 
 	function myTimer(){
@@ -43,6 +45,8 @@
 										if(result[0].match(/好き/i)) {
 											alert("success");
 											clearInterval(tim);
+									}else{
+										alert("認識に失敗しました");
 									}
                 }, function(errorMessage){
                     console.log("Error message: " + errorMessage);
@@ -86,8 +90,6 @@
 		<div id="button"><input type="button" value="START" onClick="start()"></div>
 		<p>詩が生れて、 山路を登りながら、智に働けば角が立つ。情に棹させば流される。住みにくさが高じると、安い所へ引き越したくなる。どこへ越しても住みにくいと悟った時、画が出来る。意地を通せば窮屈だ。
 宇るおうレ荻都トで田歓字止死び情土せくほ瀬年ラスセ更旧ぴ告別え話俳キシロメ転試ゆごえ社58鮮申判悪しうやク。</p>
-		<div id="speech"><svg id="レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 204.8 204.8"><defs><style>.cls-1{fill:#fff;}</style></defs><path class="cls-1" d="M102.4 0a102.4 102.4 0 1 0 102.4 102.4A102.4 102.4 0 0 0 102.4 0zM82.2 64.2a20.2 20.2 0 1 1 40.4 0v35.6a20.2 20.2 0 1 1-40.4 0zm65.7 35.6a45.5 45.5 0 0 1-39.5 45v15.9H96.5v-15.9a45.5 45.5 0 0 1-39.5-45v-6.7h8.9v6.7a36.6 36.6 0 0 0 73.1 0v-6.7h8.9v6.7z" id="New_Symbol_58" data-name="New Symbol 58"/></svg>
-		</div>
 	</section>
 	<footer>
 		<nav>
