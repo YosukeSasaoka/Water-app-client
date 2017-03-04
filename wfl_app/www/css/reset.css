@@ -1,6 +1,12 @@
 @charset "UTF-8";
 /* CSS Document */
 
+.clearfix:after {
+    content:" ";
+    display:block;
+    clear:both;
+}
+
 body {
     line-height:1;
     margin:0;
@@ -9,16 +15,16 @@ body {
 html{
 	width: 100%;
 }
- 
+
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
- 
+
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section {
     display:block;
 }
- 
+
 hr {
     display:block;
     height:1px;
@@ -27,7 +33,7 @@ hr {
     margin:1em 0;
     padding:0;
 }
- 
+
 ul {
     list-style:none;
     padding:0;
@@ -35,16 +41,13 @@ ul {
 li {
     padding:0;
 }
- 
+
 input, select {
     vertical-align:middle;
 }
- 
+
 a {
     display: block;
-}
- 
-a {
     -webkit-tap-highlight-color:transparent;
 }
 
@@ -66,13 +69,14 @@ header #title{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	 -webkit-transform: translate(-50%, -50%); /* Safari用 */	
+	 -webkit-transform: translate(-50%, -50%); /* Safari用 */
 }
 
 header a svg{
-	height: 25px;
-	float: left;
-	margin: 5px 0 6px 10px;
+	position: absolute;
+	left: 10px;
+	height: 20px;
+	top: 4px;
 }
 
 footer{
@@ -91,6 +95,6 @@ footer nav a{
 
 footer nav a svg {
     height: 7%;
-    margin: 15px auto 0;
+    margin: 9px auto 0;
     text-align: center;
 }
